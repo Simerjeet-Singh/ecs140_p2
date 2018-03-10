@@ -1,0 +1,3 @@
+running e2c
+mustbe: want TK.THEN, got Token(TK.ID a 10)
+can't parse: line 10 missing token (mustbe)

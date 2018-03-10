@@ -1,0 +1,32 @@
+  Simerjeet Singh, 912808248, sadsingh@ucdavis.edu, simer
+  Kirtanpal Ghoman, 913365324, kpghoman@ucdavis.edu, kpghoman
+  Note: All parts are fully functional in accordance with the test script and 
+  cases provided. Look EOF for Part 5 comments.
+
+  program ::= block
+  block ::= declaration_list statement_list
+  declaration_list ::= {declaration}
+  statement_list ::= {statement}
+  declaration ::= ’@’ id { ’,’ id }
+  statement ::= assignment | print | do | if
+  print ::= ’!’ expr
+  assignment ::= ref_id ’=’ expr
+  For ::= ‘{‘ [assignment] ‘:’ expr ‘:’ condition ‘:’ [‘;’ block] ‘}’
+  condition ::= ref_id ‘=’ expr 
+  ref_id ::= [ ’ ?’ [ number ] ] id
+  do ::= ’<’ guarded_command ’>’
+  if ::= ’[’ guarded_command { ’|’ guarded_command } [ ’%’ block ] ’]’
+  guarded_command ::= expr ’:’ block
+  expr ::= term { addop term }
+  term ::= factor { multop factor }
+  factor ::= ’(’ expr ’)’ | ref_id | number
+  addop ::= ’+’ | ’-’
+  multop ::= ’*’ | ’/’
+
+  Comments: we chose to have a “for” loop implementation for E language which is
+  equivalent to other languages as well as C. As a result, we have a EBNF rule for
+  our E’s “for” loop. There are two rules that we added “For” and “condition” as 
+  shown above in the grammar.Not only were we able to implement the grammar in the
+  language but we also tested cases that included developing “for” loops in E and 
+  converting them to C for testing. We have following detailed test cases for part 5:
+  test1.e,and test2.e, test3.e, test4.e.    
